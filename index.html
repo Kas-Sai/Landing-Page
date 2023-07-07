@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <title>V.Lander</title>
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem;
+}
+:root{
+    --main-color: #fe5b3d;
+    --second-color: #ffac38;
+    --text-color: #444;
+}
+body{
+    background-color: beige;
+}
+#header{ 
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://i.ibb.co/x2c98jN/Untitled-design-5.png);
+    background-size: cover;
+     background-position: center;
+}
+.container{
+  padding: 10px 10%;
+}
+nav{ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.logo{
+    width: 15%;
+    height: 25%;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 25px 20px;
+}
+nav ul li a{
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+.header-text{
+       margin-top: 20%;
+       font-size: 30px;
+}
+.header-text p{
+    font-size: larger;
+    font-family: Algerian;
+}
+.header-text h1{
+    padding: 10px;
+    font-family: Bell MT;
+    font-size: 34px;
+}
+.form-container form{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    bottom: 4rem;
+    left: 100px;
+    padding: 20px;
+}
+.input-box{
+    flex: 1 1 7rem;
+    display: flex;
+    flex-direction: column;
+}
+.input-box span{
+    font-weight: 500;
+}
+.input-box input{
+    padding: 7px;
+    outline: none;
+    border: none;
+    background: #b1b3b6;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+.form-container form .btn{
+    flex: 1 1 7rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: #474fa0;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px;
+}
+.form-container form .btn:hover{
+    background: rgb(209, 84, 38);
+}
+
+/*..............Services..........*/
+
+.heading {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    padding: 10px;
+}
+.heading2{
+    display: flex;
+    justify-content: center;
+}
+.sevices-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.sevices-container .box{
+    padding: 10px;
+    border-radius: 1rem;
+    box-shadow: 1px 4px 41px rgba(0,0,0,0.1);
+}
+.sevices-container .box .box-img{
+    width: 100%;
+    height: 200px;
+}
+.sevices-container .box .box-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+    object-position: center;
+}
+.sevices-container .box p{
+    padding: 0 10px;
+    border: 1px solid var(--text-color);
+    width: 58px;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+.sevices-container .box h3{
+    font-weight: 500;
+}
+.sevices-container .box h2{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--main-color);
+    margin: 0.2rem 0 0.5rem;
+}
+.sevices-container .box h2 span{
+    font-size: 0.8rem;
+    font-weight: 200;
+}
+.sevices-container .box .btn {
+    display: flex;
+    justify-content: center;
+    background: #474fa0;
+    color: #fff;
+    padding: 10px;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+.sevices-container .box .btn:hover{
+    background: rgb(223, 78, 26);
+}
+
+/*.........About.........*/
+.about{
+    padding: 90px;
+}
+.heading3{
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+}
+.heading4{
+    display: flex;
+    justify-content: space-around;
+    top: 100px;
+}
+.about-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 2rem;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+}
+.about-text{
+    font-size: 18px;
+}
+.about-text p{
+    margin: 0.5rem 0 1.4rem;
+}
+.about-text span{
+    color: orangered;
+}
+.about-text .btn{
+    padding: 10px 20px;
+     background: #474fa0;
+     color: #fff;
+     border-radius: 0.5rem;
+     text-decoration: none;
+}
+.about-text .btn:hover{
+    background: rgb(238, 90, 37);
+}
+
+/*.......Footer.........*/
+
+.footer{
+    background-color: #111111;
+    color: white;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+    margin-bottom: 0px;
+    
+}
+.icon{
+    display: flex;
+    gap: 30px;
+}
+.footer img{
+    width: 32px;
+    height: 30px;
+}
+.fw{
+    font-size: 28px;
+    font-family: Freehand;
+}
+
+
+</style>
+<body> <section id="home">
+    <div id="header">
+        <div class="container">
+           <nav>
+            <img src="https://i.ibb.co/ZYT7NPx/Black-n-White-Luxury-Rent-Car-Logo-removebg-preview.png" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+            </ul>
+        </nav>
+              <div class="header-text">
+                <p>Welcome to V.LANDER</p>
+                <h1>This is a V.Lander Portal for Renting Cars. <br> Book a car of your choice. </h1>
+              </div>
+              <div class="form-container">
+                 <form action="">
+                    <div class="input-box">
+                        <span>Location</span>
+                        <input type="search" name="" id="" placeholder="search places">
+                    </div>
+                    <div class="input-box">
+                        <span>Pick-up Date</span>
+                        <input type="date" name="" id="">
+                    </div>
+                    <div class="input-box">
+                        <span>Return Date</span>
+                        <input type="date" name="" id="">
+                    </div>
+                    <input type="submit" name="" id="" class="btn">
+                 </form>
+              </div>
+        </div>
+    </div>
+    </section>
+    <!--............Service..........-->
+    <section class="services" id="services">
+        <div class="heading">
+            <span>Best Services</span> 
+        </div>
+        <div class="heading2">
+            <h1>Explore Out Top Deals <br> Froom Top Rated Dealer</h1>
+        </div>
+        <div class="sevices-container">
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://i.ibb.co/dr0zV4X/car1.jpg">
+                </div>
+                <p>2022</p>
+                <h3>2023 Honda Civic</h3>
+                <h2>$2999 | $1599 <span>/month</span></h2>
+                <a href="#" class="btn">Rent Now</a>
+            </div>
+
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://i.ibb.co/j8Db6Rr/car2.jpg">
+                </div>
+                <p>2022</p>
+                <h3>2023 Honda Civic</h3>
+                <h2>$2999 | $1599 <span>/month</span></h2>
+                <a href="#" class="btn">Rent Now</a>
+            </div>
+
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://i.ibb.co/fMj866S/car3.jpg">
+                </div>
+                <p>2022</p>
+                <h3>2023 Honda Civic</h3>
+                <h2>$2999 | $1599 <span>/month</span></h2>
+                <a href="#" class="btn">Rent Now</a>
+            </div>
+
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://i.ibb.co/n7wBHsj/car4.jpg">
+                </div>
+                <p>2022</p>
+                <h3>2023 Honda Civic</h3>
+                <h2>$2999 | $1599 <span>/month</span></h2>
+                <a href="#" class="btn">Rent Now</a>
+            </div>
+            
+
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://i.ibb.co/tLM6LqJ/car5.jpg">
+                </div>
+                <p>2022</p>
+                <h3>2023 Honda Civic</h3>
+                <h2>$2999 | $1599 <span>/month</span></h2>
+                <a href="#" class="btn">Rent Now</a>
+            </div>          
+
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://i.ibb.co/QdhhswH/thar.png">
+                </div>
+                <p>2022</p>
+                <h3>2023 Honda Civic</h3>
+                <h2>$2999 | $1599 <span>/month</span></h2>
+                <a href="#" class="btn">Rent Now</a>
+            </div>
+
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://i.ibb.co/CMfFGPR/hh.png">
+                </div>
+                <p>2022</p>
+                <h3>2023 Honda Civic</h3>
+                <h2>$2999 | $1599 <span>/month</span></h2>
+                <a href="#" class="btn">Rent Now</a>
+            </div>
+
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://i.ibb.co/fH27LCq/car6.jpg">
+                </div>
+                <p>2022</p>
+                <h3>2023 Honda Civic</h3>
+                <h2>$2999 | $1599 <span>/month</span></h2>
+                <a href="#" class="btn">Rent Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!--..........About.....-->
+
+    <section class="about" id="about">
+        <div class="heading3">
+            <span>About Us</span> 
+        </div>
+        <div class="heading4">
+            <h1>Best Coustomer Experience</h1>
+        </div>
+        <div class="about-container">
+            <div class="about-img">
+                <img src="https://i.ibb.co/FWWrx4T/dee-removebg-preview.png">
+            </div>
+            <div class="about-text">
+                <span>About Us</span>
+                <p>we understand the importance of reliable and hassle-free transportation. 
+                    That's why we have revolutionized the vehicle lending industry, 
+                    offering a range of exceptional services tailored to meet your unique needs.
+                     Whether you're looking for a car rental for a weekend getaway, a business trip,
+                      or simply need a vehicle to run errands, EasyDrive is your go-to destination for 
+                      all your mobility requirements.</p>
+                      Your safety is our utmost priority. We meticulously maintain
+                      our vehicles to the highest standards and conduct regular safety inspections.
+                       Each vehicle in our fleet is equipped with modern safety features, 
+                       ensuring that you drive with confidence and peace of mind.
+                      <br><br><a href="#" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+    <section  id="foot">
+        <footer class="footer">
+            <div class="fw">V.Lander</div>
+            <div class="icon">
+                <a href="#" target="_blank"><span><img src="https://inventrom.com/images/facebook.png" alt="facebook"></span></a>
+                <a href="#" target="_blank"><span><img src="https://inventrom.com/images/twitter.png" alt="twitter"></span></a>
+                <a href="#" target="_blank"><span><img src="https://inventrom.com/images/instagram.png" alt="instagram"></span></a>
+            </div>
+            <a href="#go-up">
+                <div>
+                    <span><img src="https://inventrom.com/images/double-up-arrow.png" alt="double-up-arrow"></span>
+                </div>
+            </a>
+    </footer>
+    </section>
+</body>
+</html>
